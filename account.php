@@ -24,7 +24,7 @@
           $_SESSION['message'] = "Invalid <b>username</b> or <b>password</b>!";
         }
     }
-
+    
     else
     {
        $_SESSION['message'] = "Please input <b>username</b> or <b>password</b>!";

@@ -2,6 +2,15 @@
 <html lang="en">
 
 <?php include('header.php'); ?>
+<style>
+    ul {
+      font-size: 30px; /* Adjust the font size for the unordered list */
+    }
+
+    li {
+      font-size: 25px; /* Adjust the font size for the list items */
+    }
+  </style>
 
 <body>
     <!-- HEADER -->
@@ -22,7 +31,9 @@
             </div>
         </div>
     </header>
-
+    <h2>what is the top5 products?</h2>
+    <button onclick="toggleProducts()"><h2 style="font-size: 200%; ">Show Products</h2></button>
+  <div id="productContainer"></div>
 
     <!-- FEATURED CATEGORIES -->
 
@@ -127,6 +138,39 @@
             </div>
         </div>
     </section>
+    <script>
+    var products = ["AndowlA7", "AsusX", "ChuwiPro", "Galaxy S22 ultra", "Galaxy Z flip 3"];
+    var productContainer = document.getElementById("productContainer");
+    var showingProducts = false;
+
+    function toggleProducts() {
+      if (showingProducts) {
+        hideProducts();
+        showingProducts = false;
+      } else {
+        showProducts();
+        showingProducts = true;
+      }
+    }
+
+    function showProducts() {
+      productContainer.innerHTML = ""; // Clear previous content
+
+      var productList = document.createElement("ul"); // Create a new unordered list
+
+      for (var i = 0; i < products.length; i++) {
+        var productItem = document.createElement("li"); // Create a new list item
+        productItem.textContent = products[i];
+        productList.appendChild(productItem); // Append the list item to the unordered list
+      }
+
+      productContainer.appendChild(productList); // Append the unordered list to the product container
+    }
+
+    function hideProducts() {
+      productContainer.innerHTML = ""; // Clear the product container
+    }
+  </script>
     <!-- FOOTER SECTION -->
     <?php include('footer.php'); ?>
 </body>

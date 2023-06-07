@@ -16,5 +16,4 @@ navLinks.forEach(function (navLink) {
     })
 })
 
-// for pop-up that you did'nt fill up the user name and password
 
